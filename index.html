@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saswata Biswas | Software Engineer & Develpoer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: 'rgba(15, 23, 42, 0.75)',
+                        accentCyan: '#06b6d4',
+                        accentBlue: '#3b82f6',
+                        accentPurple: '#8b5cf6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel:hover {
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 relative selection:bg-cyan-500 selection:text-white">
+
+    <!-- Ambient Glow Background Elements -->
+    <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="glow-effect top-2/3 right-10 translate-x-1/4"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    SB
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">Saswata Biswas</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA / Action button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] transition-all">
+                    Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-slate-900/50 border border-slate-800">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-6 py-6 space-y-4 animate-fadeIn">
+            <a href="#about" class="block text-slate-300 hover:text-cyan-400 text-base font-medium py-2 mobile-link">About</a>
+            <a href="#education" class="block text-slate-300 hover:text-cyan-400 text-base font-medium py-2 mobile-link">Education</a>
+            <a href="#skills" class="block text-slate-300 hover:text-cyan-400 text-base font-medium py-2 mobile-link">Skills</a>
+            <a href="#projects" class="block text-slate-300 hover:text-cyan-400 text-base font-medium py-2 mobile-link">Projects</a>
+            <a href="#contact" class="block text-slate-300 hover:text-cyan-400 text-base font-medium py-2 mobile-link">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="block w-full text-center px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-sm shadow-lg shadow-cyan-500/20 mobile-link">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-20">
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-medium animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span>Available for Software & Computer Vision Roles</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    Architecting Intelligent <br class="hidden sm:inline">
+                    <span class="gradient-text">Software & Vision Systems</span>
+                </h1>
+
+                <!-- Subtitle / Taglines -->
+                <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                    Computer Science & Engineering graduate specializing in robust backend development, scalable Python automation, efficient Desktop Baesed Aplication (JAVA) and state-of-the-art Computer Vision.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all text-center flex items-center justify-center space-x-2">
+                        <span>View Projects</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-slate-200 font-semibold hover:bg-slate-800/80 hover:text-white hover:-translate-y-0.5 transition-all text-center border border-slate-700/60">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Quick Social Bar -->
+                <div class="pt-8 flex items-center justify-center space-x-6 text-slate-400">
+                    <a href="https://github.com/SaswataNX05" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/saswata-biswas-8b7b4b3a6/" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="mailto:Saswata.saswatabiswa268@gmail.com" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-cyan-400">Background</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Engineering Code with Precision</h3>
+                <p class="text-slate-400 text-base">Bridging rigorous computer science fundamentals with practical problem-solving in software architecture and visual computing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left Bio Card -->
+                <div class="lg:col-span-7 glass-panel rounded-3xl p-8 sm:p-10 space-y-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-bl-full pointer-events-none"></div>
+                    <h4 class="text-2xl font-semibold text-white">Computer Science & Engineering</h4>
+                    <p class="text-slate-300 leading-relaxed font-light">
+                        I am persuing a Bacthelor's Degree in Computer Science & Engineering, where I built a deep foundational mastery of data structures, algorithms, object-oriented design, and concurrent systems. Over the years, my academic curiosity evolved into a professional passion for building high-performance software applications and intelligent computer vision pipelines.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed font-light">
+                        Whether architecting automated data pipelines, processing complex medical imaging data for tissue engineering, efficent desktop based managemnt applications, signle player games or designing clean REST APIs, I focus on clean code, testability, and optimization.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                        <div>
+                            <span class="block text-2xl font-bold text-cyan-400">4+</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Years Coding</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-indigo-400">15+</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Projects Built</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-purple-400">100%</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wider">Commitment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Vision & Interests Card -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel rounded-3xl p-8 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h5 class="text-xl font-semibold text-white">Computer Vision & AI</h5>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">
+                            Passionate about enabling machines to interpret visual data. Experienced with OpenCV image processing filters, feature matching, and PyTorch deep learning networks for object detection and biomedical segmentation.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-3xl p-8 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h5 class="text-xl font-semibold text-white">Robust Software Systems</h5>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">
+                            Writing scalable backend modules in Java and Python, ensuring reliable database management with SQLite/PostgreSQL, and utilizing Git for structured team version control.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          <!-- Education Section -->
+        <section id="education" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-cyan-400">Academic Roots</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Education & Honors</h3>
+                <p class="text-slate-400 text-base">Degrees, academic achievements, and foundational coursework in computer science and engineering.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Education Card 1 -->
+                <div class="glass-panel rounded-3xl p-8 space-y-6 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-medium border border-cyan-500/20">Batch of 2023</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white">B.Tech in Computer Science & Engineering</h4>
+                        <h5 class="text-sm font-medium text-slate-400">Maulana Abul Kalam Azad University Of Technology (MAKAUT)</h5>
+                         <h6 class="text-sm font-medium text-slate-400">RCC Institute Of Informstion Technology (RCCIIT)</h6>
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            Persuing the Degree. Focused on core software systems, data structures, algorithms, and advanced computer vision architectures.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-800 space-y-3">
+                        <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Key Coursework </span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Data Structures & Algorithms</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Computer Architectures</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Operating Systems</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Compiler Design</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Computer Networks</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Database Management Systems</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Cloud Computing</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Object-Oriented Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="glass-panel rounded-3xl p-8 space-y-6 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-medium border border-indigo-500/20">Certifications</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white">Specialized Certifications</h4>
+                        <h5 class="text-sm font-medium text-slate-400">DeepLearning.AI & Industry Standards</h5>
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            Continuously expanding expertise through industry-recognized specialized programs in machine learning, cloud engineering, and modern version control.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-800 space-y-3">
+                        <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Credentials</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Deep Learning Specialization (Coursera)</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Python Workshop (MeiTy)</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Intel AI Workshop</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Advanced OpenCV Developer</span>
+                            <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 text-xs border border-slate-800 hover:border-cyan-500/40">Git & GitHub Masterclass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-cyan-400">Technical Arsenal</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Core Technologies & Tools</h3>
+                <p class="text-slate-400 text-base">A curated stack of languages, libraries, and frameworks I leverage to build production-grade solutions.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card 1: Java -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Java</h4>
+                    <p class="text-xs text-slate-400 mt-1">Object-Oriented Design, OOP Principles</p>
+                </div>
+
+                <!-- Skill Card 2: Python -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Python</h4>
+                    <p class="text-xs text-slate-400 mt-1">Automation, Scripting, AI/ML</p>
+                </div>
+
+                <!-- Skill Card 3: C++ -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">C</h4>
+                    <p class="text-xs text-slate-400 mt-1">High-Performance & Systems Code</p>
+                </div>
+
+                <!-- Skill Card 4: OpenCV -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">OpenCV</h4>
+                    <p class="text-xs text-slate-400 mt-1">Image Processing & Vision Pipelines</p>
+                </div>
+
+                <!-- Skill Card 5: PyTorch -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">PyTorch</h4>
+                    <p class="text-xs text-slate-400 mt-1">Deep Learning & Neural Networks</p>
+                </div>
+
+                <!-- Skill Card 6: Git -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-600/10 border border-orange-600/30 flex items-center justify-center text-orange-500 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Git & GitHub</h4>
+                    <p class="text-xs text-slate-400 mt-1">Version Control & Collaboration</p>
+                </div>
+
+                <!-- Skill Card 7: SQLite -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-cyan-600/10 border border-cyan-600/30 flex items-center justify-center text-cyan-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">SQLite & SQL</h4>
+                    <p class="text-xs text-slate-400 mt-1">Relational Datasets & Querying</p>
+                </div>
+
+                 <!-- Skill Card 8: Java Swing -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-cyan-600/10 border border-cyan-600/30 flex items-center justify-center text-cyan-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Java Swing</h4>
+                    <p class="text-xs text-slate-400 mt-1">Building responsive desktop graphical user interfaces and component layouts.</p>
+                </div>
+
+                <!-- Skill Card 9: Web Technologies -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Web Technologies</h4>
+                    <p class="text-xs text-slate-400 mt-1">HTML5, CSS3, JavaScript, Tailwind</p>
+                </div>
+
+                 <!-- Skill Card 10: Arch Neovim -->
+                <div class="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Tools and Workflow</h4>
+                    <p class="text-xs text-slate-400 mt-1">Arch Linux environment, Neovim LSP configuration, Git version control, and Linux command line.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-cyan-400">Featured Work</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Software & Computer Vision Projects</h3>
+                <p class="text-slate-400 text-base">Explore highlighted applications ranging from medical image registration to sophisticated workflow automation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: Organ Scaffold Registration Tool -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h4 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Organ Scaffold Registration Tool</h4>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            An advanced image processing and computer vision desktop application built for biomedical engineering research. It automatically registers microscopic 3D organ scaffold images, aligning multi-channel slices to analyze porous microstructures and structural integrity.
+                        </p>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-medium border border-cyan-500/20">Python</span>
+                            <span class="px-3 py-1 rounded-lg bg-green-500/10 text-green-300 text-xs font-medium border border-green-500/20">OpenCV</span>
+                            <span class="px-3 py-1 rounded-lg bg-red-500/10 text-red-300 text-xs font-medium border border-red-500/20">PyTorch</span>
+                            <span class="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-medium border border-purple-500/20">NumPy</span>
+                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Tkinter</span>
+                        </div>
+                    </div>
+
+                    <div class="px-8 py-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>Biomedical Image Processing</span>
+                        <span class="text-cyan-400 font-medium">Featured Research Tool</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Python Automation Utilities -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h4 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Python Automation Utilities Suite</h4>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            A comprehensive toolkit of CLI and background automation scripts designed to eliminate tedious developer workflows. Features include batch image format converters, automated log file parsers, database backup schedulers, and API data scrapers.
+                        </p>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-yellow-500/10 text-yellow-300 text-xs font-medium border border-yellow-500/20">Python</span>
+                            <span class="px-3 py-1 rounded-lg bg-cyan-600/10 text-cyan-300 text-xs font-medium border border-cyan-600/20">SQLite</span>
+                            <span class="px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-300 text-xs font-medium border border-indigo-500/20">Click CLI</span>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 text-xs font-medium border border-emerald-500/20">Requests</span>
+                        </div>
+                    </div>
+
+                    <div class="px-8 py-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>Developer Productivity</span>
+                        <span class="text-yellow-400 font-medium">Open Source Toolkit</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Real-time Object Detection Pipeline -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h4 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Real-Time Object Detection Pipeline</h4>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            High-speed video analytics pipeline developed using Python and PyTorch. Capable of processing webcam streams at 30+ FPS for multi-class object detection, bounding box tracking, and anomaly flagging with low latency.
+                        </p>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-red-500/10 text-red-300 text-xs font-medium border border-red-500/20">PyTorch</span>
+                            <span class="px-3 py-1 rounded-lg bg-green-500/10 text-green-300 text-xs font-medium border border-green-500/20">OpenCV</span>
+                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">C++ Inference</span>
+                        </div>
+                    </div>
+
+                    <div class="px-8 py-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>Computer Vision AI</span>
+                        <span class="text-indigo-400 font-medium">Real-Time Processing</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Enterprise Inventory Management System -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="p-8 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h4 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Enterprise Inventory Management System</h4>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            A robust desktop and backend inventory solution built in Java utilizing object-oriented principles, design patterns, and an embedded relational database. Features multi-user role management, stock alerts, and automated PDF reporting.
+                        </p>
+
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-medium border border-orange-500/20">Java</span>
+                            <span class="px-3 py-1 rounded-lg bg-cyan-600/10 text-cyan-300 text-xs font-medium border border-cyan-600/20">SQLite</span>
+                            <span class="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-medium border border-purple-500/20">JDBC</span>
+                        </div>
+                    </div>
+
+                    <div class="px-8 py-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>Backend Software</span>
+                        <span class="text-orange-400 font-medium">Enterprise Grade</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-cyan-400">Get In Touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Build Something Together</h3>
+                <p class="text-slate-400 text-base">Have a project in mind, a software engineering opportunity, or just want to connect? Drop me a message below.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel rounded-3xl p-8 space-y-6">
+                        <h4 class="text-2xl font-semibold text-white">Contact Information</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            I am currently open to software engineering roles, computer vision research projects, and technical collaborations. Reach out directly or fill out the form.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase tracking-wider">Email Me</span>
+                                    <a href="mailto:saswatabiswas268@gmail.com" class="text-white font-medium hover:text-cyan-400 transition-colors">saswatabiswas268@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase tracking-wider">Location</span>
+                                    <span class="text-white font-medium">Kolkata, India (Remote Friendly)</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase tracking-wider">Availability</span>
+                                    <span class="text-white font-medium">Full-time & Contract Open</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Socials -->
+                        <div class="pt-4 border-t border-slate-800 flex items-center space-x-4">
+                            <a href="https://github.com/SaswataNX05" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/saswata-biswas-8b7b4b3a6/" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/" target="_blank" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all">
+                                <i class="fa-brands fa-x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="glass-panel rounded-3xl p-8 sm:p-10 space-y-6 relative">
+                        <div id="form-success-banner" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center space-x-3 animate-fadeIn">
+                            <i class="fa-solid fa-circle-check text-lg"></i>
+                            <span>Thank you! Your message has been sent successfully. I will get back to you soon.</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="name" class="block text-xs font-medium uppercase tracking-wider text-slate-300">Your Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Sonu Paul">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="block text-xs font-medium uppercase tracking-wider text-slate-300">Your Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="sonu@example.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="subject" class="block text-xs font-medium uppercase tracking-wider text-slate-300">Subject</label>
+                            <input type="text" id="subject" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Project Inquiry / Job Opportunity">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message" class="block text-xs font-medium uppercase tracking-wider text-slate-300">Message</label>
+                            <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Hello Saswata, I'd like to discuss a project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.01] transition-all flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800/80 glass-panel py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                    SB
+                </div>
+                <span class="text-sm font-semibold text-white">Saswata Biswas</span>
+            </div>
+
+            <p class="text-xs text-slate-400 text-center">
+                &copy; <span id="current-year"></span> Saswata Biswas. Built with HTML5, CSS3, Tailwind & Vanilla JavaScript.
+            </p>
+
+            <div class="flex items-center space-x-4 text-slate-400 text-sm">
+                <a href="#hero" class="hover:text-cyan-400 transition-colors">Back to top <i class="fa-solid fa-arrow-up text-xs ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Contact form submission handling (No alert() used!)
+            const contactForm = document.getElementById('contact-form');
+            const successBanner = document.getElementById('form-success-banner');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate successful submission
+                successBanner.classList.remove('hidden');
+                contactForm.reset();
+
+                // Hide success banner after 6 seconds
+                setTimeout(() => {
+                    successBanner.classList.add('hidden');
+                }, 6000);
+            });
+
+            // Navbar scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('shadow-xl', 'bg-darkBg/90');
+                } else {
+                    header.classList.remove('shadow-xl', 'bg-darkBg/90');
+                }
+            });
+        };
+    </script>
+</body>
+</html>
